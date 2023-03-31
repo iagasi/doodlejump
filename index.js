@@ -309,12 +309,15 @@ class Player extends Sprite {
 
 
         }
-
+        if (this.position.y + 50 > CANVAS.height) {
+            location.reload()
+        }
 
     }
     gameOver() {
         this.velocity = 0
         this.alive = false
+        location.reload()
     }
     gameOn() {
         this.velocity = 10
