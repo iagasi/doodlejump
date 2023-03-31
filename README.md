@@ -1,4 +1,4 @@
 #DooleJump
 
-Play game: iagasi.github.io/doodlejump
+Play game: https://iagasi.github.io/doodlejump
 
