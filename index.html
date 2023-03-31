@@ -13,11 +13,29 @@
         width: 500px;
         border: 1px solid black;
     }
+
+    .game {
+        display: flex;
+    }
+
+    .game__description {
+        text-align: center;
+        padding: 30px;
+    }
 </style>
 
 <body>
+    <div class="game">
+        <canvas id="canvas"></canvas>
+        <div class="game__description">
+            <h2>Demo version</h2>
+            <h2>Only for PC</h2>
+            Controll keys: <strong>A D </strong>.</br> <strong>Space</strong>:for Shooting
+            <strong>Important</strong>. make sure english keyboard is selected
+        </div>
 
-    <canvas id="canvas"></canvas>
+    </div>
+
     <script src="./shoot.js"></script>
 
     <script src="./enemy.js"></script>
