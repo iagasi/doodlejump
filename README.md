@@ -1,3 +1,2 @@
-# doodlejump
-
-<h1>iagasi.github.io/doodlejump</h1>
+#  Play game 
+# iagasi.github.io/doodlejump
