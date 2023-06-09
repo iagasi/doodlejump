@@ -22,16 +22,45 @@
         text-align: center;
         padding: 30px;
     }
+    .gameOver{
+        position: absolute; 
+        background-color: rgb(129, 129, 234);
+        border-radius: 10px;
+        display:  flex;
+        padding: 20px;
+        font-size: 20px;
+        flex-direction: column;
+        gap:20px;
+      
+        transform: translate(-50%, -50%); 
+        top: 50%; 
+        left: 30%;
+        width: fit-content;
+        height: fit-content;
+    display: none;
+    }
+    .new-game{
+        cursor: pointer;
+    }
+    .new-game:hover{
+        background-color: green;
+    }
 </style>
 
 <body>
+    <div class="gameOver ">
+        Game Over
+<button class="new-game">New Game</button>    </div>
     <div class="game">
         <canvas id="canvas"></canvas>
         <div class="game__description">
             <h2>Demo version</h2>
             <h2>Only for PC</h2>
-            Controll keys: <strong>A D </strong>.</br> <strong>Space</strong>:for Shooting
-            <strong>Important</strong>. make sure english keyboard is selected
+         Controll keys: <strong>A D </strong>.
+         <hr/>
+        </br> <strong>Space</strong>:for Shooting
+        <hr/>
+            <strong>Important</strong>. Make sure English keyboard is selected
         </div>
 
     </div>

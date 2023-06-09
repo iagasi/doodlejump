@@ -49,9 +49,12 @@ class HandleCollisions {
     }
 
     generateCollisions() {
-        const initialCols = generateInitialColisions()
-        const cols = genrateRandomCollisions(this.collisionsAmount, 10, this.player.jumpHeight, this.colInstance)
-        //  const cols = genrateRandomMovingCollisions(this.collisionsAmount, 10, this.player.jumpHeight, MovingCollision)
+   
+
+       const initialCols = generateInitialColisions()
+
+      const cols = genrateRandomCollisions(this.collisionsAmount*2, 10, this.player.jumpHeight, this.colInstance)
+        // const cols = genrateRandomMovingCollisions(this.collisionsAmount*2, 20, this.player.jumpHeight, MovingCollision)
         this.collisions.push(...initialCols, ...cols,)
 
 
@@ -108,13 +111,13 @@ class HandleCollisions {
         if (this.collisions.length < 12) {
             let cols2
             console.log(Math.floor(Math.random() * 10));
-            if (Math.floor(Math.random() * 10) > 5) {
-                //cols2 = genrateRandomMovingCollisions(this.collisionsAmount, 10, this.player.jumpHeight, MovingCollision)
-            }
-            // else {
+            //if (Math.floor(Math.random() * 10) >= 5) {
+              //  cols2 = genrateRandomMovingCollisions(this.collisionsAmount, 10, this.player.jumpHeight, MovingCollision)
+      //      }
+    //        else {
             cols2 = genrateRandomCollisions(this.collisionsAmount, -1, this.player.jumpHeight, Collision)
 
-            //  }
+      //       }
             this.collisions.push(...cols2,)
 
             this.player.enemies.add(new FirstBigEnemy())
