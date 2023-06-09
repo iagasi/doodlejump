@@ -331,7 +331,7 @@ function animate() {
 window.addEventListener("keydown", (e) => {
   switch (e.key.toLocaleLowerCase()) {
     case "w":
-      pressedKeys.w = true;
+    //   pressedKeys.w = true;
       break;
     case "a":
       pressedKeys.a = true;
@@ -340,7 +340,7 @@ window.addEventListener("keydown", (e) => {
       pressedKeys.d = true;
       break;
     case "s":
-      pressedKeys.s = true;
+    //   pressedKeys.s = true;
       break;
     case " ":
       pressedKeys.space = true;

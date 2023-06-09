@@ -53,7 +53,7 @@ class HandleCollisions {
 
        const initialCols = generateInitialColisions()
 
-      const cols = genrateRandomCollisions(this.collisionsAmount*2, 10, this.player.jumpHeight, this.colInstance)
+      const cols = genrateRandomCollisions(this.collisionsAmount*3, 10, this.player.jumpHeight, this.colInstance)
         // const cols = genrateRandomMovingCollisions(this.collisionsAmount*2, 20, this.player.jumpHeight, MovingCollision)
         this.collisions.push(...initialCols, ...cols,)
 
