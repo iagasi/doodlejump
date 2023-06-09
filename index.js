@@ -4,6 +4,7 @@ CANVAS.height = 800;
 const ctx = CANVAS.getContext("2d");
 const OVER = document.querySelector(".gameOver");
 const NEWGAME = document.querySelector(".new-game");
+const LOADING = document.querySelector(".loading");
 NEWGAME.addEventListener("click", () => {
   location.reload();
 });
@@ -365,7 +366,11 @@ window.addEventListener("keyup", (e) => {
       pressedKeys.space = false;
   }
 });
+window.addEventListener("load", (event) => {
+    LOADING.style.display="none"
+   animate()
+  });
 
-animate();
+//
 
 //const m = new FirstBigEnemy({ position: { x: 10, y: 10 }, options: {} })

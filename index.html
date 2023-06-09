@@ -45,9 +45,27 @@
     .new-game:hover{
         background-color: green;
     }
+    .loading{
+        position: absolute; 
+        background-color: rgb(129, 129, 234);
+        border-radius: 10px;
+        display:  flex;
+        padding: 20px;
+        font-size: 20px;
+        flex-direction: column;
+        gap:20px;
+      
+        transform: translate(-50%, -50%); 
+        top: 50%; 
+        left: 250px;
+        width: fit-content;
+        height: fit-content;
+
+    }
 </style>
 
 <body>
+   <div class=" loading "> Loading...</div>
     <div class="gameOver ">
         Game Over
 <button class="new-game">New Game</button>    </div>
