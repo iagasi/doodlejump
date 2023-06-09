@@ -12,7 +12,7 @@ const gravity = 1;
 const jump = 40;
 
 const moveXValue = 5;
-
+let shootImage
 //const collisionsArray = []
 const pressedKeys = {
   a: false,
@@ -109,7 +109,7 @@ class Player extends Sprite {
     this.width = this.initialWidth / 1.8;
     this.height = this.initialHeight / 1.8;
     ////
-    this.shootImgX = 200;
+    this.shootImgX = 160;
     this.jumpLeftImgX = 327;
 
     this.playerFacing = new PlayerFacePositionHandler();
@@ -153,11 +153,13 @@ class Player extends Sprite {
   }
   playerImagesHandler() {
     if (pressedKeys.space) {
-      this.sx = this.shootImgX;
-    } else if (this.counter % 10 === 0) {
+     this.sx = this.shootImgX;
+     
+    } 
+   
       if (this.playerFacing == "left") {
         this.sx = this.jumpLeftImgX;
-      }
+      
     }
   }
   update() {
@@ -314,7 +316,7 @@ const enm = new FirstBigEnemy();
 const player = new Player({
   position: {
     x: 210,
-    y: CANVAS.height - 300,
+    y: CANVAS.height - 150,
   },
   soundEffects,
 });
@@ -325,7 +327,9 @@ function animate() {
   player.update();
   text.update();
   // jumpPlayer.update()
-  pressedKeys.space = false;
+//pressedKeys.space = false
+
+  //;
   requestAnimationFrame(animate);
 }
 
