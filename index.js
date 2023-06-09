@@ -326,8 +326,7 @@ function animate() {
 
   player.update();
   text.update();
-  // jumpPlayer.update()
-//pressedKeys.space = false
+  
 
   //;
   requestAnimationFrame(animate);

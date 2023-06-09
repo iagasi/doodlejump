@@ -10,8 +10,7 @@ this.t=0
         if (pressedKeys.space) {
             this.playerPosition = { ...playerPosition }
             this.bullets = this.bullets.filter(e => e.position.y < CANVAS.height)
-            //  this.bullets = this.bullets.filter(e => e.position.y < -1000)
-      if(this.t%10==0){
+      if(this.t%5==0){
         if(this.t>100){this.t=0}
           this.bullets.push(new Bulet(this.playerPosition, this.gunDirection))
 

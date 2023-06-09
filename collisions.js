@@ -53,8 +53,8 @@ class HandleCollisions {
 
        const initialCols = generateInitialColisions()
 
-      //const cols = genrateRandomCollisions(this.collisionsAmount/2, 10, this.player.jumpHeight, this.colInstance)
-        const cols = genrateRandomMovingCollisions(this.collisionsAmount*22, 20, this.player.jumpHeight, MovingCollision)
+      const cols = genrateRandomCollisions(this.collisionsAmount/2, 10, this.player.jumpHeight, this.colInstance)
+     //   const cols = genrateRandomMovingCollisions(this.collisionsAmount*22, 20, this.player.jumpHeight, MovingCollision)
         this.collisions.push(...initialCols, ...cols,)
 
 
@@ -66,7 +66,7 @@ class HandleCollisions {
         this.collisions.forEach((colider, index) => {
 
             if (colider.position.y > CANVAS.height) {
-                text.score++
+                 text.score++
                 this.collisions = this.collisions.filter((collision, i) => colider !== collision)
 
             }
