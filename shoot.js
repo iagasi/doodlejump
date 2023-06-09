@@ -2,15 +2,22 @@ class Gun {
     constructor() {
         this.playerPosition
         this.bullets = []
-
+this.t=0
         this.gunDirection = "right"
     }
     update(playerPosition) {
+        this.t++
         if (pressedKeys.space) {
             this.playerPosition = { ...playerPosition }
             this.bullets = this.bullets.filter(e => e.position.y < CANVAS.height)
-            //  this.bullets = this.bullets.filter(e => e.position.y < -1000)
-            this.bullets.push(new Bulet(this.playerPosition, this.gunDirection))
+      if(this.t%5==0){
+        if(this.t>100){this.t=0}
+          this.bullets.push(new Bulet(this.playerPosition, this.gunDirection))
+
+
+      }
+
+          
 
         }
         this.bullets.length && this.bullets.forEach(bullet => {

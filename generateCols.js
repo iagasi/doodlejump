@@ -55,15 +55,30 @@ function genrateRandomCollisions(maxItems, firstYPosition = 0, playerJumpHeight,
         const lastX = cols[cols.length - 1].position.x
 
         let randomX = 0
-        if (Math.floor(Math.random() * 10) > 5) {
+        let someRandom=Math.floor(Math.random() * 10)
+        if (someRandom > 5) {
             randomX = Math.floor(Math.random() * lastX)
 
         }
         else { randomX = Math.floor(Math.random() * (CANVAS.width - Width)) }
         const randomY = Math.floor(Math.random() * (playerJumpHeight / 3) + (lastY + 50))
-        cols.push(
+        if(someRandom>7){
+            cols.push(
+                new MovingCollision({
+                    position: {
+                        x: randomX, y: randomY,
+                    },
+                    options: { moveRange: 1, speed: 1 }
+            
+                })
+            )  
+        }
+        else{
+          cols.push(
             new Collision({ position: { x: randomX, y: randomY } })
-        )
+        )   
+        }
+       
     }
 
 

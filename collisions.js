@@ -49,9 +49,12 @@ class HandleCollisions {
     }
 
     generateCollisions() {
-        const initialCols = generateInitialColisions()
-        const cols = genrateRandomCollisions(this.collisionsAmount, 10, this.player.jumpHeight, this.colInstance)
-        //  const cols = genrateRandomMovingCollisions(this.collisionsAmount, 10, this.player.jumpHeight, MovingCollision)
+   
+
+       const initialCols = generateInitialColisions()
+
+      const cols = genrateRandomCollisions(this.collisionsAmount/2, 10, this.player.jumpHeight, this.colInstance)
+     //   const cols = genrateRandomMovingCollisions(this.collisionsAmount*22, 20, this.player.jumpHeight, MovingCollision)
         this.collisions.push(...initialCols, ...cols,)
 
 
@@ -63,7 +66,7 @@ class HandleCollisions {
         this.collisions.forEach((colider, index) => {
 
             if (colider.position.y > CANVAS.height) {
-                text.score++
+                 text.score++
                 this.collisions = this.collisions.filter((collision, i) => colider !== collision)
 
             }
@@ -84,7 +87,7 @@ class HandleCollisions {
             this.moveTo = (this.whenMovePlatgorms + player.jumpHeight - player.colidedPosition.y);
             /////
             //const midst = Math.floor(this.collisions.length / 2)
-            const lastCollision = this.collisions.length - 1
+            const lastCollision = this.collisions.length-5
             this.someStaticCollisionY = Object.assign({}, this.collisions[lastCollision]).position.y
             this.randomCollision = this.collisions[lastCollision]
             ///////
@@ -108,13 +111,9 @@ class HandleCollisions {
         if (this.collisions.length < 12) {
             let cols2
             console.log(Math.floor(Math.random() * 10));
-            if (Math.floor(Math.random() * 10) > 5) {
-                //cols2 = genrateRandomMovingCollisions(this.collisionsAmount, 10, this.player.jumpHeight, MovingCollision)
-            }
-            // else {
+        
             cols2 = genrateRandomCollisions(this.collisionsAmount, -1, this.player.jumpHeight, Collision)
 
-            //  }
             this.collisions.push(...cols2,)
 
             this.player.enemies.add(new FirstBigEnemy())
